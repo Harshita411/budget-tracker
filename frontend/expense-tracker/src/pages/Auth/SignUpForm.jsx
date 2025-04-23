@@ -111,11 +111,13 @@ const SignUpForm = () => {
 
           <div className="flex justify-center mt-6">
             <button
-              type="submit"
-              className="w-48 bg-blue-800 hover:bg-blue-900 text-white font-semibold py-2 px-4 rounded-md transition duration-200 ease-in-out"
-            >
-              SIGN UP
-            </button>
+  type="submit"
+  className="w-48 text-white font-semibold py-2 px-4 rounded-md transition duration-200 ease-in-out"
+  style={{ backgroundColor: "#1f68a1" }}
+>
+  SIGN UP
+</button>
+
           </div>
           
           <p className="text-[13px] text-gray-700 mt-3 text-center"> {/* Added text-center */}

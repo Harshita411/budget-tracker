@@ -15,7 +15,6 @@ const LoginForm = () => {
   const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
 
-  // Handle Login Form Submit
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -88,12 +87,15 @@ const LoginForm = () => {
           {error && <p className="text-red-400 text-xs pb-2.5">{error}</p>}
 
           <div className="flex justify-center mt-6">
-            <button
-              type="submit"
-              className="w-48 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md transition duration-200 ease-in-out"
-            >
-              LOGIN
-            </button>
+          <button
+  type="submit"
+  className="w-48 text-white font-semibold py-2 px-4 rounded-md transition duration-200 ease-in-out"
+  style={{ backgroundColor: "#1f68a1" }}
+>
+  LOGIN
+</button>
+
+
           </div>
 
           <p className="text-[13px] text-slate-800 mt-3 text-center">

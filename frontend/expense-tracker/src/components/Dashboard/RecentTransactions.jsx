@@ -18,7 +18,8 @@ const RecentTransactions = ({ transactions, onSeeMore }) => (
           key={_id}
           title={type === "expense" ? category : source}
           date={moment(date).format("Do MMM YYYY")}
-          amount={`₹${amount.toLocaleString("en-IN")}`}
+          amount={amount.toLocaleString("en-IN")}
+
           type={type}
           hideDeleteBtn
         />
