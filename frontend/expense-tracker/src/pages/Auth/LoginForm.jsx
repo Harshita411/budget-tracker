@@ -30,7 +30,6 @@ const LoginForm = () => {
 
     setError(""); // Clear any previous errors
 
-    //Login API Call
     try {
       const response = await axiosInstance.post(API_PATHS.AUTH.LOGIN, {
         email,
@@ -54,51 +53,47 @@ const LoginForm = () => {
 
   return (
     <AuthLayout>
-      <div className="lg:w-[100%] h-auto md:h-full mt-10 md:mt-0 flex flex-col justify-center">
+      <div className="lg:w-full h-auto md:h-full mt-10 md:mt-0 flex flex-col justify-center">
         <h3 className="text-2xl font-bold text-blue-900 font-sans text-center">Welcome Back</h3>
 
-        <p className="text-xs text-grey-300 mt-[5px] mb-6 text-center">
+        <p className="text-xs text-gray-500 mt-1 mb-6 text-center">
           Please enter your details to log in
         </p>
 
         <form onSubmit={handleLogin}>
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-4 w-full"> {/* Ensure full width for inputs */}
+          <div className="grid grid-cols-1 gap-4 w-full">
             <Input
               value={email}
               onChange={({ target }) => setEmail(target.value)}
               label="Email Address"
               placeholder="john@example.com"
               type="text"
-              className="text-white w-full" // Full width
+              className="text-black w-full"
             />
 
-            <div className="col-span-1">
-              <Input
-                value={password}
-                onChange={({ target }) => setPassword(target.value)}
-                label="Password"
-                placeholder="Min 8 Characters"
-                type="password"
-                className="text-white w-full" // Full width
-              />
-            </div>
+            <Input
+              value={password}
+              onChange={({ target }) => setPassword(target.value)}
+              label="Password"
+              placeholder="Min 8 Characters"
+              type="password"
+              className="text-black w-full"
+            />
           </div>
 
-          {error && <p className="text-red-400 text-xs pb-2.5">{error}</p>}
+          {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
 
           <div className="flex justify-center mt-6">
-          <button
-  type="submit"
-  className="w-48 text-white font-semibold py-2 px-4 rounded-md transition duration-200 ease-in-out"
-  style={{ backgroundColor: "#1f68a1" }}
->
-  LOGIN
-</button>
-
-
+            <button
+              type="submit"
+              className="w-48 text-white font-semibold py-2 px-4 rounded-md transition duration-200 ease-in-out"
+              style={{ backgroundColor: "#1f68a1" }}
+            >
+              LOGIN
+            </button>
           </div>
 
-          <p className="text-[13px] text-slate-800 mt-3 text-center">
+          <p className="text-sm text-slate-800 mt-3 text-center">
             Don’t have an account?{" "}
             <Link className="font-medium text-[#1e3a8a] underline" to="/signup">
               Sign Up
